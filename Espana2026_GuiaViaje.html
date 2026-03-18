@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>🇪🇸 España 2026 · Guía de Viaje</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --bg:#0D0D0D;
+  --surface:#161616;
+  --surface2:#1E1E1E;
+  --border:#2A2A2A;
+  --red:#D93025;
+  --gold:#E8A020;
+  --blue:#1A6FA8;
+  --green:#2E7D32;
+  --text:#F0EDE6;
+  --muted:#888;
+  --font-display:'Cormorant Garamond',serif;
+  --font-body:'Outfit',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:15px;min-height:100vh;overflow-x:hidden}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+
+/* HERO */
+.hero{position:relative;padding:0;overflow:hidden;min-height:280px;display:flex;flex-direction:column;justify-content:flex-end}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#8B0000 0%,#C0392B 30%,#E8A020 65%,#1A3A5C 100%);opacity:1}
+.hero-pattern{position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.03) 0,rgba(255,255,255,.03) 1px,transparent 0,transparent 50%);background-size:20px 20px}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 0%,rgba(13,13,13,0.7) 100%)}
+.hero-content{position:relative;z-index:2;padding:2rem 1.5rem 1.5rem}
+.hero-eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:.5rem}
+.hero-title{font-family:var(--font-display);font-size:3.8rem;font-weight:900;line-height:.9;color:white;text-shadow:0 2px 20px rgba(0,0,0,.5)}
+.hero-title span{color:var(--gold)}
+.hero-meta{margin-top:.75rem;font-size:13px;color:rgba(255,255,255,.65);line-height:1.7}
+.hero-flags{font-size:24px;margin-top:.5rem;letter-spacing:4px}
+.hero-badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:1rem}
+.hbadge{font-size:11px;padding:4px 10px;border-radius:20px;font-weight:500;background:rgba(255,255,255,.12);backdrop-filter:blur(10px);color:white;border:1px solid rgba(255,255,255,.15)}
+
+/* COUNTDOWN */
+.countdown-bar{background:var(--gold);color:#000;padding:.75rem 1.5rem;display:flex;align-items:center;justify-content:space-between;font-weight:600;font-size:13px}
+.cd-nums{display:flex;gap:1rem}
+.cd-unit{text-align:center}
+.cd-n{font-family:var(--font-display);font-size:1.8rem;font-weight:900;line-height:1;display:block}
+.cd-l{font-size:9px;letter-spacing:2px;text-transform:uppercase;opacity:.7}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(13,13,13,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav-inner{display:flex;padding:0 .5rem;min-width:max-content}
+.nav-btn{padding:.85rem .9rem;font-size:12px;font-weight:500;color:var(--muted);border:none;background:none;cursor:pointer;white-space:nowrap;position:relative;font-family:var(--font-body);transition:color .2s;display:flex;align-items:center;gap:5px}
+.nav-btn.active{color:var(--text)}
+.nav-btn.active::after{content:'';position:absolute;bottom:0;left:.9rem;right:.9rem;height:2px;background:var(--gold);border-radius:2px}
+
+/* PANELS */
+.panel{display:none;padding:1.25rem;animation:fadeIn .3s ease}
+.panel.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* SECTION HEADER */
+.sec-header{display:flex;align-items:center;gap:10px;margin-bottom:1rem}
+.sec-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.sec-title{font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:var(--text)}
+.sec-sub{font-size:12px;color:var(--muted);margin-left:auto;white-space:nowrap}
+
+/* CITY DIVIDER */
+.city-div{background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:.75rem 1rem;margin:1.25rem 0 .75rem;display:flex;align-items:center;gap:10px}
+.city-div-name{font-family:var(--font-display);font-size:1.4rem;font-weight:700}
+.city-div-dates{font-size:11px;color:var(--muted);margin-left:auto}
+
+/* DAY CARDS */
+.day-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;margin-bottom:.6rem;overflow:hidden;transition:border-color .2s}
+.day-card.open{border-color:#333}
+.day-head{display:flex;align-items:center;gap:10px;padding:.85rem 1rem;cursor:pointer;user-select:none}
+.day-badge{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0;font-family:var(--font-display)}
+.day-info{flex:1;min-width:0}
+.day-name{font-weight:500;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.day-date{font-size:11px;color:var(--muted);margin-top:1px}
+.day-arrow{font-size:11px;color:var(--muted);transition:transform .25s;flex-shrink:0}
+.day-card.open .day-arrow{transform:rotate(180deg)}
+.day-body{display:none;border-top:1px solid var(--border)}
+.day-card.open .day-body{display:block}
+.activity{display:flex;gap:10px;padding:.65rem 1rem;border-bottom:1px solid rgba(255,255,255,.04);align-items:flex-start}
+.activity:last-child{border-bottom:none}
+.act-time{font-size:11px;color:var(--muted);min-width:40px;padding-top:2px;font-weight:500}
+.act-ico{font-size:16px;margin-top:0;line-height:1.2;flex-shrink:0}
+.act-info{flex:1}
+.act-name{font-size:13.5px;font-weight:500}
+.act-tip{font-size:11.5px;color:var(--muted);margin-top:2px;line-height:1.4}
+.act-tag{display:inline-block;font-size:10px;padding:2px 8px;border-radius:10px;font-weight:600;margin-top:4px}
+.tag-free{background:rgba(46,125,50,.2);color:#81C784}
+.tag-cost{background:rgba(232,160,32,.15);color:#E8A020}
+.tag-warn{background:rgba(217,48,37,.15);color:#EF9A9A}
+
+/* TRAVEL STRIP */
+.travel-strip{background:linear-gradient(135deg,#1A1A2E,#16213E);border:1px solid #2A3A5E;border-radius:14px;padding:1rem 1.25rem;margin:1rem 0;display:flex;align-items:center;gap:12px}
+.ts-icon{font-size:28px}
+.ts-info{flex:1}
+.ts-name{font-weight:600;font-size:14px}
+.ts-detail{font-size:12px;color:var(--muted);margin-top:2px}
+.ts-cost{font-size:14px;font-weight:700;color:var(--gold)}
+
+/* BUDGET */
+.budget-hero{background:linear-gradient(135deg,#8B0000,#C0392B);border-radius:16px;padding:1.5rem;margin-bottom:1rem;position:relative;overflow:hidden}
+.budget-hero::after{content:'€';position:absolute;right:-10px;top:-20px;font-size:120px;font-family:var(--font-display);font-weight:900;color:rgba(255,255,255,.06)}
+.bh-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.25rem}
+.bh-total{font-family:var(--font-display);font-size:3rem;font-weight:900;color:white;line-height:1}
+.bh-sub{font-size:12px;color:rgba(255,255,255,.55);margin-top:.35rem}
+.bh-pp{margin-top:.75rem;display:flex;gap:.5rem;flex-wrap:wrap}
+.bh-tag{font-size:11px;background:rgba(255,255,255,.15);padding:4px 10px;border-radius:10px;color:white}
+
+.budget-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.85rem 1rem;margin-bottom:.5rem;display:flex;align-items:center;gap:12px}
+.bi-icon{font-size:20px;flex-shrink:0}
+.bi-info{flex:1}
+.bi-name{font-size:13.5px;font-weight:500}
+.bi-bar-bg{height:3px;background:rgba(255,255,255,.08);border-radius:3px;margin-top:6px}
+.bi-bar{height:3px;border-radius:3px;background:var(--gold)}
+.bi-range{text-align:right}
+.bi-total{font-size:13px;font-weight:600;color:var(--gold)}
+.bi-pp{font-size:11px;color:var(--muted);margin-top:2px}
+
+.budget-split{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:1rem}
+.bs-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.85rem;text-align:center}
+.bs-person{font-size:22px;margin-bottom:4px}
+.bs-age{font-size:11px;color:var(--muted);margin-bottom:.35rem}
+.bs-amount{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--gold)}
+.bs-note{font-size:10px;color:var(--muted);margin-top:2px}
+
+.alert-box{background:rgba(232,160,32,.08);border:1px solid rgba(232,160,32,.3);border-radius:12px;padding:1rem;margin-top:1rem;font-size:13px;color:rgba(232,160,32,.9);line-height:1.6}
+.alert-box strong{color:var(--gold)}
+
+/* CHECKLIST */
+.check-group{margin-bottom:1.5rem}
+.check-group-title{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;padding-left:.25rem}
+.check-item{display:flex;align-items:center;gap:10px;padding:.75rem .85rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;margin-bottom:.35rem;cursor:pointer;transition:all .15s;user-select:none}
+.check-item:active{transform:scale(.98)}
+.check-item.done{opacity:.55}
+.check-item.done .check-label{text-decoration:line-through}
+.check-box{width:20px;height:20px;border-radius:5px;border:1.5px solid var(--border);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;transition:all .15s;color:transparent}
+.check-item.done .check-box{background:var(--green);border-color:var(--green);color:white}
+.check-icon{font-size:16px;flex-shrink:0}
+.check-label{font-size:13.5px;flex:1}
+.check-note{font-size:11px;color:var(--muted);white-space:nowrap}
+.check-progress-bar{height:6px;background:var(--surface2);border-radius:6px;margin-bottom:1.25rem;overflow:hidden}
+.cpb-fill{height:100%;background:linear-gradient(90deg,var(--green),#4CAF50);border-radius:6px;transition:width .4s ease}
+.check-stats{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:.5rem}
+
+/* TIPS */
+.tip-grid{display:grid;gap:.6rem}
+.tip-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1rem;border-left:3px solid var(--gold)}
+.tip-card.red{border-left-color:var(--red)}
+.tip-card.blue{border-left-color:var(--blue)}
+.tip-card.green{border-left-color:#4CAF50}
+.tip-head{display:flex;align-items:center;gap:8px;margin-bottom:.4rem}
+.tip-ico{font-size:18px}
+.tip-title{font-size:13.5px;font-weight:600}
+.tip-body{font-size:12.5px;color:var(--muted);line-height:1.6}
+
+/* FRASES */
+.phrase-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.85rem 1rem;margin-bottom:.4rem;display:flex;align-items:center;gap:10px;cursor:pointer;transition:background .15s}
+.phrase-card:active{background:var(--surface2)}
+.phrase-es{font-size:14px;font-weight:500;flex:1}
+.phrase-pron{font-size:12px;color:var(--muted);margin-top:2px}
+.phrase-copy{font-size:14px;opacity:.4}
+.phrase-context{font-size:10px;background:rgba(255,255,255,.06);padding:2px 8px;border-radius:8px;color:var(--muted);white-space:nowrap}
+.phrase-section{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin:1rem 0 .5rem .25rem}
+
+/* EMERGENCIAS */
+.emergency-card{background:rgba(217,48,37,.08);border:1px solid rgba(217,48,37,.25);border-radius:14px;padding:1rem;margin-bottom:.6rem}
+.ec-title{font-size:13px;font-weight:600;color:#EF9A9A;display:flex;align-items:center;gap:6px;margin-bottom:.5rem}
+.ec-number{font-family:var(--font-display);font-size:2rem;font-weight:900;color:var(--red)}
+.ec-note{font-size:12px;color:var(--muted);margin-top:2px}
+.embassy{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1rem;margin-bottom:.5rem}
+
+/* TOAST */
+.toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);background:#333;color:white;padding:.6rem 1.2rem;border-radius:20px;font-size:13px;opacity:0;transition:all .3s;pointer-events:none;z-index:1000;white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* BOTTOM NAV (mobile) */
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:rgba(13,13,13,.97);backdrop-filter:blur(20px);border-top:1px solid var(--border);display:flex;z-index:200;padding-bottom:env(safe-area-inset-bottom)}
+.bn-btn{flex:1;display:flex;flex-direction:column;align-items:center;padding:.6rem .25rem;cursor:pointer;color:var(--muted);font-size:10px;font-family:var(--font-body);gap:3px;transition:color .2s;background:none;border:none}
+.bn-btn.active{color:var(--gold)}
+.bn-ico{font-size:20px;line-height:1}
+
+/* SPACING for bottom nav */
+.content-wrap{padding-bottom:80px}
+
+/* WEATHER WIDGET */
+.weather-card{background:linear-gradient(135deg,#1A3A5C,#0D2137);border:1px solid #2A4A6E;border-radius:14px;padding:1rem;margin-bottom:1rem;display:flex;gap:12px;align-items:center}
+.wc-city{flex:1}
+.wc-name{font-weight:600;font-size:14px;margin-bottom:2px}
+.wc-desc{font-size:12px;color:var(--muted)}
+.wc-temp{font-family:var(--font-display);font-size:2.2rem;font-weight:700;color:var(--gold);line-height:1}
+.wc-icon{font-size:32px}
+.weather-row{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:1rem}
+
+/* DIVIDER */
+.divider{height:1px;background:var(--border);margin:1.25rem 0}
+
+/* PACKING */
+.pack-cat{margin-bottom:1rem}
+.pack-title{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+.pack-grid{display:grid;grid-template-columns:1fr 1fr;gap:.35rem}
+.pack-item{display:flex;align-items:center;gap:8px;padding:.55rem .75rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;cursor:pointer;transition:all .15s;user-select:none}
+.pack-item.done{opacity:.45}
+.pack-item.done .pack-label{text-decoration:line-through}
+.pack-ico{font-size:15px;flex-shrink:0}
+.pack-label{font-size:12.5px}
+.pack-cb{width:16px;height:16px;border:1.5px solid var(--border);border-radius:3px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:transparent;margin-left:auto;transition:all .15s}
+.pack-item.done .pack-cb{background:var(--green);border-color:var(--green);color:white}
+
+/* MAPS SECTION */
+.map-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:.6rem}
+.map-header{padding:.85rem 1rem;display:flex;align-items:center;gap:10px}
+.map-title{font-weight:600;font-size:14px;flex:1}
+.map-btn{font-size:11px;padding:5px 12px;background:var(--blue);color:white;border-radius:8px;text-decoration:none;font-family:var(--font-body);font-weight:500}
+.map-spots{border-top:1px solid var(--border)}
+.map-spot{display:flex;align-items:center;gap:10px;padding:.6rem 1rem;border-bottom:1px solid rgba(255,255,255,.04);font-size:13px}
+.map-spot:last-child{border-bottom:none}
+.ms-num{width:22px;height:22px;border-radius:50%;background:var(--red);color:white;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ms-num.blue{background:var(--blue)}
+
+/* Responsive tweaks */
+@media(max-width:380px){
+  .hero-title{font-size:3rem}
+  .cd-n{font-size:1.4rem}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Guía de viaje · Familia · 2026</div>
+    <div class="hero-title">Es<span>pa</span>ña</div>
+    <div class="hero-meta">Madrid 1–5 mayo &nbsp;·&nbsp; Barcelona 5–15 mayo<br>4 viajeros: 10, 30, 33 y 64 años</div>
+    <div class="hero-flags">🇨🇴 ✈️ 🇪🇸</div>
+    <div class="hero-badges">
+      <span class="hbadge">🏛 Cultura</span>
+      <span class="hbadge">⚽ Fútbol</span>
+      <span class="hbadge">🏖 Playa</span>
+      <span class="hbadge">💶 Presupuesto medio-bajo</span>
+    </div>
+  </div>
+</div>
+
+<!-- COUNTDOWN -->
+<div class="countdown-bar">
+  <span style="font-size:13px">⏳ Faltan para el viaje</span>
+  <div class="cd-nums">
+    <div class="cd-unit"><span class="cd-n" id="cd-d">--</span><span class="cd-l">días</span></div>
+    <div class="cd-unit"><span class="cd-n" id="cd-h">--</span><span class="cd-l">hrs</span></div>
+    <div class="cd-unit"><span class="cd-n" id="cd-m">--</span><span class="cd-l">min</span></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="nav">
+  <div class="nav-inner">
+    <button class="nav-btn active" onclick="switchPanel('itinerario',this)">📅 Itinerario</button>
+    <button class="nav-btn" onclick="switchPanel('presupuesto',this)">💶 Presupuesto</button>
+    <button class="nav-btn" onclick="switchPanel('checklist',this)">✅ Checklist</button>
+    <button class="nav-btn" onclick="switchPanel('equipaje',this)">🎒 Equipaje</button>
+    <button class="nav-btn" onclick="switchPanel('frases',this)">💬 Frases</button>
+    <button class="nav-btn" onclick="switchPanel('escapadas',this)">🌍 Escapadas</button>
+    <button class="nav-btn" onclick="switchPanel('consejos',this)">💡 Consejos</button>
+    <button class="nav-btn" onclick="switchPanel('emergencias',this)">🆘 Emergencias</button>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+<!-- ===== ITINERARIO ===== -->
+<div class="panel active" id="panel-itinerario">
+
+  <div class="weather-row">
+    <div class="weather-card" style="flex-direction:column;align-items:flex-start;gap:4px;">
+      <div style="display:flex;width:100%;align-items:center;gap:8px">
+        <span class="wc-icon">☀️</span>
+        <div class="wc-city" style="flex:1"><div class="wc-name">Madrid · Mayo</div><div class="wc-desc">Días soleados, noches frescas</div></div>
+      </div>
+      <div style="display:flex;gap:1rem;margin-top:4px;font-size:12px;color:var(--muted)">
+        <span>🌡 18–24°C</span><span>🌧 Lluvia ocasional</span><span>☀️ ~8h sol</span>
+      </div>
+    </div>
+  </div>
+  <div class="weather-row" style="margin-top:-.25rem">
+    <div class="weather-card" style="flex-direction:column;align-items:flex-start;gap:4px;">
+      <div style="display:flex;width:100%;align-items:center;gap:8px">
+        <span class="wc-icon">🌤</span>
+        <div class="wc-city" style="flex:1"><div class="wc-name">Barcelona · Mayo</div><div class="wc-desc">Mediterráneo — cálido y agradable</div></div>
+      </div>
+      <div style="display:flex;gap:1rem;margin-top:4px;font-size:12px;color:var(--muted)">
+        <span>🌡 20–27°C</span><span>🌊 Mar 19°C</span><span>☀️ ~9h sol</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="city-div">
+    <span style="font-size:20px">🏰</span>
+    <div class="city-div-name" style="color:#E57373">Madrid</div>
+    <div class="city-div-dates">1 – 5 mayo · 4 noches</div>
+  </div>
+  <div id="days-madrid"></div>
+
+  <div class="travel-strip">
+    <div class="ts-icon">✈️</div>
+    <div class="ts-info">
+      <div class="ts-name">Vuelo Madrid → Barcelona</div>
+      <div class="ts-detail">5 mayo · ~1h 15min · Aeropuerto Barajas (MAD) → El Prat (BCN)</div>
+    </div>
+    <div class="ts-cost">Ya reservado ✓</div>
+  </div>
+
+  <div class="city-div">
+    <span style="font-size:20px">🦜</span>
+    <div class="city-div-name" style="color:#64B5F6">Barcelona</div>
+    <div class="city-div-dates">5 – 15 mayo · 10 noches</div>
+  </div>
+  <div id="days-barcelona"></div>
+
+</div>
+
+<!-- ===== PRESUPUESTO ===== -->
+<div class="panel" id="panel-presupuesto">
+
+  <div class="budget-hero">
+    <div class="bh-label">Estimado total · 4 personas</div>
+    <div class="bh-total">3.400–4.800€</div>
+    <div class="bh-sub">Actividades + transporte local + comidas (15 días)<br>Vuelos y alojamiento no incluidos</div>
+    <div class="bh-pp">
+      <span class="bh-tag">850–1.200€ por persona</span>
+      <span class="bh-tag">~80€/día/persona</span>
+    </div>
+  </div>
+
+  <div id="budget-items"></div>
+
+  <div class="divider"></div>
+  <div style="font-size:13px;color:var(--muted);margin-bottom:1rem;font-weight:500">Estimado por viajero</div>
+  <div class="budget-split" id="budget-split"></div>
+
+  <div class="alert-box">
+    <strong>⚠️ Fondos exigidos en frontera española:</strong> 7.266 EUR para 4 personas (requisito migratorio Schengen). Lleva extractos bancarios de los últimos 3 meses y tarjetas de crédito a la vista.
+  </div>
+
+  <div class="divider"></div>
+
+  <div style="font-size:13px;font-weight:500;margin-bottom:.75rem">💰 Tips para ahorrar</div>
+  <div id="saving-tips"></div>
+
+</div>
+
+<!-- ===== CHECKLIST ===== -->
+<div class="panel" id="panel-checklist">
+  <div class="check-stats">
+    <span id="check-stat-text">0 de 0 completados</span>
+    <span id="check-stat-pct">0%</span>
+  </div>
+  <div class="check-progress-bar"><div class="cpb-fill" id="cpb" style="width:0%"></div></div>
+  <div id="checks-container"></div>
+</div>
+
+<!-- ===== EQUIPAJE ===== -->
+<div class="panel" id="panel-equipaje">
+  <div style="font-size:13px;color:var(--muted);margin-bottom:1rem;line-height:1.6">Toca cada ítem para marcarlo como empacado. Mayo en España = días cálidos + noches frescas.</div>
+  <div id="packing-container"></div>
+</div>
+
+<!-- ===== FRASES ===== -->
+<div class="panel" id="panel-frases">
+  <div style="font-size:13px;color:var(--muted);margin-bottom:1rem;line-height:1.5">Aunque hablan español, el acento y vocabulario son diferentes. Toca una frase para copiarla 👆</div>
+  <div id="phrases-container"></div>
+</div>
+
+<!-- ===== ESCAPADAS ===== -->
+<div class="panel" id="panel-escapadas">
+
+  <!-- HERO de la ruta -->
+  <div style="background:linear-gradient(135deg,#0D2010,#1A3A1A,#2A1A3A);border-radius:16px;padding:1.5rem;margin-bottom:1.25rem;position:relative;overflow:hidden">
+    <div style="position:absolute;right:-10px;top:-15px;font-size:80px;opacity:.08">🏔</div>
+    <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(165,214,167,.6);margin-bottom:.4rem">Escapada confirmada</div>
+    <div style="font-family:var(--font-display);font-size:2rem;font-weight:900;color:#A5D6A7;line-height:1.1">Ruta de los<br>Pirineos 🇪🇸→🇫🇷</div>
+    <div style="font-size:13px;color:rgba(255,255,255,.55);margin-top:.6rem;line-height:1.6">Barcelona → Puigcerdà → La Tour-de-Carol → Tren Amarillo</div>
+    <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.85rem">
+      <span style="font-size:11px;background:rgba(165,214,167,.12);color:#A5D6A7;padding:4px 10px;border-radius:10px;border:1px solid rgba(165,214,167,.2)">🚂 100% en tren</span>
+      <span style="font-size:11px;background:rgba(165,214,167,.12);color:#A5D6A7;padding:4px 10px;border-radius:10px;border:1px solid rgba(165,214,167,.2)">⏱ ~5–6h de aventura</span>
+      <span style="font-size:11px;background:rgba(165,214,167,.12);color:#A5D6A7;padding:4px 10px;border-radius:10px;border:1px solid rgba(165,214,167,.2)">💶 ~60–80€ pp todo</span>
+      <span style="font-size:11px;background:rgba(165,214,167,.12);color:#A5D6A7;padding:4px 10px;border-radius:10px;border:1px solid rgba(165,214,167,.2)">🇫🇷 Pisas Francia</span>
+    </div>
+  </div>
+
+  <!-- MAPA DE RUTA VISUAL -->
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem;margin-bottom:1rem">
+    <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:1rem">Ruta completa del día</div>
+    <!-- Stop 1 -->
+    <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:0">
+      <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+        <div style="width:32px;height:32px;border-radius:50%;background:#1A3A1A;border:2px solid #A5D6A7;display:flex;align-items:center;justify-content:center;font-size:14px">🚉</div>
+        <div style="width:2px;height:36px;background:linear-gradient(to bottom,#A5D6A7,#81C784);margin-top:2px"></div>
+      </div>
+      <div style="padding-top:4px;flex:1">
+        <div style="font-weight:600;font-size:13.5px">Barcelona Sants</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:1px">Salida · 08:31h · Andén principal</div>
+        <div style="font-size:11px;background:rgba(165,214,167,.08);color:#A5D6A7;padding:3px 8px;border-radius:6px;display:inline-block;margin-top:4px">Renfe Rodalies R3</div>
+      </div>
+      <div style="text-align:right;font-size:11px;color:var(--muted);padding-top:4px">🇪🇸</div>
+    </div>
+    <!-- Stop 2 -->
+    <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:0">
+      <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+        <div style="width:32px;height:32px;border-radius:50%;background:#1A2A1A;border:2px solid #81C784;display:flex;align-items:center;justify-content:center;font-size:14px">🏘</div>
+        <div style="width:2px;height:36px;background:linear-gradient(to bottom,#81C784,#FFD54F);margin-top:2px"></div>
+      </div>
+      <div style="padding-top:4px;flex:1">
+        <div style="font-weight:600;font-size:13.5px">Puigcerdà</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:1px">~2h desde BCN · Parada opcional 30–60 min</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:3px">Pueblo medieval en la frontera · Lago y casco histórico</div>
+      </div>
+      <div style="text-align:right;font-size:11px;color:var(--muted);padding-top:4px">🇪🇸</div>
+    </div>
+    <!-- Stop 3 -->
+    <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:0">
+      <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+        <div style="width:32px;height:32px;border-radius:50%;background:#2A2A10;border:2px solid #FFD54F;display:flex;align-items:center;justify-content:position;display:flex;align-items:center;justify-content:center;font-size:14px">🏔</div>
+        <div style="width:2px;height:36px;background:linear-gradient(to bottom,#FFD54F,#FFA726);margin-top:2px"></div>
+      </div>
+      <div style="padding-top:4px;flex:1">
+        <div style="font-weight:600;font-size:13.5px">La Tour-de-Carol · Enveitg</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:1px">~3h 20min desde BCN · 1.232m de altitud</div>
+        <div style="font-size:11px;background:rgba(255,213,79,.1);color:#FFD54F;padding:3px 8px;border-radius:6px;display:inline-block;margin-top:4px">🇫🇷 Territorio francés</div>
+      </div>
+      <div style="text-align:right;font-size:11px;color:#FFD54F;padding-top:4px;font-weight:600">🇫🇷</div>
+    </div>
+    <!-- Stop 4 -->
+    <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:0">
+      <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+        <div style="width:32px;height:32px;border-radius:50%;background:#2A1A00;border:2px solid #FFA726;display:flex;align-items:center;justify-content:center;font-size:14px">🟡</div>
+        <div style="width:2px;height:36px;background:linear-gradient(to bottom,#FFA726,#FF7043);margin-top:2px"></div>
+      </div>
+      <div style="padding-top:4px;flex:1">
+        <div style="font-weight:600;font-size:13.5px">Tren Amarillo 🚞</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:1px">Desde La Tour-de-Carol · Subida a 1.593m de altura</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:3px">19 túneles · 2 viaductos históricos · Vagones abiertos</div>
+      </div>
+      <div style="text-align:right;font-size:11px;color:#FFA726;padding-top:4px;font-weight:600">🇫🇷</div>
+    </div>
+    <!-- Stop 5 -->
+    <div style="display:flex;gap:12px;align-items:flex-start">
+      <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+        <div style="width:32px;height:32px;border-radius:50%;background:#2A1010;border:2px solid #FF7043;display:flex;align-items:center;justify-content:center;font-size:14px">🏡</div>
+      </div>
+      <div style="padding-top:4px;flex:1">
+        <div style="font-weight:600;font-size:13.5px">Font-Romeu o Villefranche</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:1px">Destino final · Almuerzo en Francia · Regreso en tarde</div>
+      </div>
+      <div style="text-align:right;font-size:11px;color:#FF7043;padding-top:4px;font-weight:600">🇫🇷</div>
+    </div>
+  </div>
+
+  <!-- PASO A PASO COMPRA -->
+  <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem">📋 Paso a paso · Cómo comprar</div>
+
+  <div style="display:grid;gap:.5rem;margin-bottom:1.25rem">
+
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.9rem 1rem;display:flex;gap:12px;align-items:flex-start">
+      <div style="width:28px;height:28px;border-radius:50%;background:rgba(165,214,167,.15);color:#A5D6A7;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">1</div>
+      <div style="flex:1">
+        <div style="font-size:13.5px;font-weight:600;margin-bottom:.3rem">Comprar billete Renfe R3: BCN Sants → La Tour-de-Carol</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.6">Entra a <strong style="color:var(--text)">renfe.com</strong> o la app de Renfe. Buscar: "Barcelona Sants" → "Latour de Carol Enveitg". Seleccionar el <strong style="color:var(--text)">tren de las 08:31</strong> para tener el día completo. Es tren regional directo — no necesita reserva de asiento, pero comprar online sale más barato.</div>
+        <div style="margin-top:.5rem;display:flex;gap:.4rem;flex-wrap:wrap">
+          <span style="font-size:11px;background:rgba(232,160,32,.1);color:var(--gold);padding:2px 8px;border-radius:6px">~15–20€ pp ida</span>
+          <span style="font-size:11px;background:rgba(255,255,255,.06);color:var(--muted);padding:2px 8px;border-radius:6px">Directo ~3h 20min</span>
+          <span style="font-size:11px;background:rgba(255,255,255,.06);color:var(--muted);padding:2px 8px;border-radius:6px">4 personas = ~60–80€ ida</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.9rem 1rem;display:flex;gap:12px;align-items:flex-start">
+      <div style="width:28px;height:28px;border-radius:50%;background:rgba(255,213,79,.15);color:#FFD54F;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">2</div>
+      <div style="flex:1">
+        <div style="font-size:13.5px;font-weight:600;margin-bottom:.3rem">Comprar billete Tren Amarillo en La Tour-de-Carol</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.6">Al llegar a La Tour-de-Carol hay una taquilla de SNCF en la misma estación. Comprar ahí el tren amarillo hacia <strong style="color:var(--text)">Font-Romeu</strong> (1h 15min, más accesible) o hacia <strong style="color:var(--text)">Villefranche-de-Conflent</strong> (3h, el recorrido completo épico). Se puede también comprar online en <strong style="color:var(--text)">SNCF Connect</strong> desde Colombia antes de salir.</div>
+        <div style="margin-top:.5rem;display:flex;gap:.4rem;flex-wrap:wrap">
+          <span style="font-size:11px;background:rgba(255,167,38,.1);color:#FFA726;padding:2px 8px;border-radius:6px">Font-Romeu: 11,60€ pp</span>
+          <span style="font-size:11px;background:rgba(255,167,38,.1);color:#FFA726;padding:2px 8px;border-radius:6px">Completo: 24,30€ pp</span>
+          <span style="font-size:11px;background:rgba(165,214,167,.1);color:#A5D6A7;padding:2px 8px;border-radius:6px">-40% con 4 personas 🎉</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.9rem 1rem;display:flex;gap:12px;align-items:flex-start">
+      <div style="width:28px;height:28px;border-radius:50%;background:rgba(144,202,249,.15);color:#90CAF9;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">3</div>
+      <div style="flex:1">
+        <div style="font-size:13.5px;font-weight:600;margin-bottom:.3rem">Planear el regreso desde Francia a Barcelona</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.6">Desde Font-Romeu o Villefranche: tomar el Tren Amarillo de regreso a La Tour-de-Carol. Luego el Renfe R3 de vuelta a Barcelona. El último tren de La Tour-de-Carol → Barcelona sale aprox. a las <strong style="color:var(--text)">17:51h</strong> — llegar a Sants ~21:15h. Revisar horarios exactos en renfe.com antes del viaje.</div>
+        <div style="margin-top:.5rem;font-size:11px;background:rgba(217,48,37,.1);color:#EF9A9A;padding:3px 8px;border-radius:6px;display:inline-block">⚠ No perder el último tren de regreso</div>
+      </div>
+    </div>
+
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.9rem 1rem;display:flex;gap:12px;align-items:flex-start">
+      <div style="width:28px;height:28px;border-radius:50%;background:rgba(206,147,216,.15);color:#CE93D8;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">4</div>
+      <div style="flex:1">
+        <div style="font-size:13.5px;font-weight:600;margin-bottom:.3rem">Descuento grupal del Tren Amarillo</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.6">Con 4 personas aplica el descuento <strong style="color:var(--text)">"Tribu Evasio"</strong>: <strong style="color:#A5D6A7">−40% siendo 4 viajeros</strong>. El trayecto completo pasa de 24,30€ a ~14,60€ por persona. Para activarlo, comprar en la taquilla de la estación indicando que son 4 personas, o llamando al <strong style="color:var(--text)">+33 4 68 96 63 63</strong>.</div>
+        <div style="margin-top:.5rem;font-size:11px;background:rgba(165,214,167,.1);color:#A5D6A7;padding:3px 8px;border-radius:6px;display:inline-block">💰 Ahorro real: ~40€ en total</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PLAN DEL DIA PROPUESTO -->
+  <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem">🗓 Plan del día sugerido</div>
+
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:1.25rem">
+    <div style="padding:.65rem 1rem;border-bottom:1px solid rgba(255,255,255,.04);display:flex;gap:10px;align-items:flex-start">
+      <span style="font-size:12px;color:var(--muted);min-width:44px;padding-top:1px">08:00</span>
+      <span style="font-size:14px">🚶</span>
+      <div><div style="font-size:13.5px;font-weight:500">Salir hacia Barcelona Sants</div><div style="font-size:12px;color:var(--muted);margin-top:1px">Llegar 30 min antes. Desayuno en la cafetería de la estación</div></div>
+    </div>
+    <div style="padding:.65rem 1rem;border-bottom:1px solid rgba(255,255,255,.04);display:flex;gap:10px;align-items:flex-start">
+      <span style="font-size:12px;color:var(--muted);min-width:44px;padding-top:1px">08:31</span>
+      <span style="font-size:14px">🚂</span>
+      <div><div style="font-size:13.5px;font-weight:500">Tren Renfe R3 · Salida desde Sants</div><div style="font-size:12px;color:var(--muted);margin-top:1px">El paisaje cambia progresivamente: costa → llano → valle → montaña. Tener cámara lista</div></div>
+    </div>
+    <div style="padding:.65rem 1rem;border-bottom:1px solid rgba(255,255,255,.04);display:flex;gap:10px;align-items:flex-start">
+      <span style="font-size:12px;color:var(--muted);min-width:44px;padding-top:1px">10:30</span>
+      <span style="font-size:14px">🏘</span>
+      <div><div style="font-size:13.5px;font-weight:500">Parada opcional en Puigcerdà (30 min)</div><div style="font-size:12px;color:var(--muted);margin-top:1px">Bajar a ver el lago, el casco histórico medieval y ya pisas la frontera. Tomar el siguiente tren</div></div>
+    </div>
+    <div style="padding:.65rem 1rem;border-bottom:1px solid rgba(255,255,255,.04);display:flex;gap:10px;align-items:flex-start">
+      <span style="font-size:12px;color:var(--muted);min-width:44px;padding-top:1px">11:50</span>
+      <span style="font-size:14px">🏔</span>
+      <div><div style="font-size:13.5px;font-weight:500">Llegada a La Tour-de-Carol · 🇫🇷 Francia</div><div style="font-size:12px;color:var(--muted);margin-top:1px">Comprar billetes del Tren Amarillo en taquilla (o ya los tienes de antes). Foto en el letrero de Francia</div></div>
+    </div>
+    <div style="padding:.65rem 1rem;border-bottom:1px solid rgba(255,255,255,.04);display:flex;gap:10px;align-items:flex-start">
+      <span style="font-size:12px;color:var(--muted);min-width:44px;padding-top:1px">12:30</span>
+      <span style="font-size:14px">🟡</span>
+      <div><div style="font-size:13.5px;font-weight:500">Tren Amarillo hacia Font-Romeu</div><div style="font-size:12px;color:var(--muted);margin-top:1px">1h 15min de viaductos, túneles y Pirineos a 1.500m. Pedir vagón abierto si hace buen tiempo. El puente Séjourné de 65m de alto es el momento cumbre</div></div>
+    </div>
+    <div style="padding:.65rem 1rem;border-bottom:1px solid rgba(255,255,255,.04);display:flex;gap:10px;align-items:flex-start">
+      <span style="font-size:12px;color:var(--muted);min-width:44px;padding-top:1px">13:45</span>
+      <span style="font-size:14px">🍽️</span>
+      <div><div style="font-size:13.5px;font-weight:500">Almuerzo en Font-Romeu · 🇫🇷</div><div style="font-size:12px;color:var(--muted);margin-top:1px">Estación de esquí francesa a 1.800m. Restaurantes con cocina de montaña: raclette, tartiflette y quesos. El primer almuerzo de la familia en Francia</div></div>
+    </div>
+    <div style="padding:.65rem 1rem;border-bottom:1px solid rgba(255,255,255,.04);display:flex;gap:10px;align-items:flex-start">
+      <span style="font-size:12px;color:var(--muted);min-width:44px;padding-top:1px">15:30</span>
+      <span style="font-size:14px">🟡</span>
+      <div><div style="font-size:13.5px;font-weight:500">Tren Amarillo de regreso a La Tour-de-Carol</div><div style="font-size:12px;color:var(--muted);margin-top:1px">Mismos paisajes desde el otro lado. Si les queda tiempo, explorar Enveitg o Bourg-Madame</div></div>
+    </div>
+    <div style="padding:.65rem 1rem;border-bottom:1px solid rgba(255,255,255,.04);display:flex;gap:10px;align-items:flex-start">
+      <span style="font-size:12px;color:var(--muted);min-width:44px;padding-top:1px">17:00</span>
+      <span style="font-size:14px">🚂</span>
+      <div><div style="font-size:13.5px;font-weight:500">Renfe R3 · Regreso a Barcelona</div><div style="font-size:12px;color:var(--muted);margin-top:1px">~3h 20min. El tren baja desde la montaña de noche. Llegada a Sants ~20:30h. Cena en Barcelona merecidísima</div></div>
+    </div>
+    <div style="padding:.65rem 1rem;display:flex;gap:10px;align-items:flex-start;background:rgba(165,214,167,.04)">
+      <span style="font-size:12px;color:var(--muted);min-width:44px;padding-top:1px">20:30</span>
+      <span style="font-size:14px">🎉</span>
+      <div><div style="font-size:13.5px;font-weight:500;color:#A5D6A7">De vuelta en Barcelona con 3 países en un día 🇪🇸🇫🇷(🇦🇩)</div><div style="font-size:12px;color:var(--muted);margin-top:1px">España, Francia y de paso la zona limítrofe con Andorra</div></div>
+    </div>
+  </div>
+
+  <!-- PRESUPUESTO TOTAL -->
+  <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem">💶 Costo total estimado · 4 personas</div>
+
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:1.25rem">
+    <table style="width:100%;font-size:12.5px;border-collapse:collapse">
+      <tr style="border-bottom:1px solid rgba(255,255,255,.06)">
+        <td style="padding:.6rem 1rem">🚂 Renfe BCN → La Tour (×4)</td>
+        <td style="padding:.6rem .85rem;text-align:right;color:var(--gold)">60–80€</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,255,255,.06)">
+        <td style="padding:.6rem 1rem">🚂 Renfe La Tour → BCN (×4)</td>
+        <td style="padding:.6rem .85rem;text-align:right;color:var(--gold)">60–80€</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,255,255,.06)">
+        <td style="padding:.6rem 1rem">🟡 Tren Amarillo ida+vuelta (×4, desc. grupo −40%)</td>
+        <td style="padding:.6rem .85rem;text-align:right;color:var(--gold)">~55–70€</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,255,255,.06)">
+        <td style="padding:.6rem 1rem">🍽️ Almuerzo en Font-Romeu (×4)</td>
+        <td style="padding:.6rem .85rem;text-align:right;color:var(--gold)">60–100€</td>
+      </tr>
+      <tr style="background:rgba(165,214,167,.06)">
+        <td style="padding:.7rem 1rem;font-weight:600;color:#A5D6A7">Total estimado · 4 personas</td>
+        <td style="padding:.7rem .85rem;text-align:right;font-weight:700;color:#A5D6A7;font-size:14px">235–330€</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- TIPS ESPECIALES -->
+  <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem">💡 Tips imprescindibles</div>
+
+  <div style="display:grid;gap:.5rem;margin-bottom:1.25rem">
+
+    <div style="background:var(--surface);border-left:3px solid #FFD54F;border-radius:0 10px 10px 0;padding:.85rem 1rem">
+      <div style="font-size:13px;font-weight:600;margin-bottom:.3rem">🪟 Pedir vagón abierto en el Tren Amarillo</div>
+      <div style="font-size:12.5px;color:var(--muted);line-height:1.5">En mayo ya hay buen clima de montaña. Los vagones tipo "jardinera" (descubiertos) son la experiencia icónica. Pedirlo al comprar el billete o al subir. Las vistas desde el Puente Séjourné y el Viaducto Gisclard son imborrables.</div>
+    </div>
+
+    <div style="background:var(--surface);border-left:3px solid #A5D6A7;border-radius:0 10px 10px 0;padding:.85rem 1rem">
+      <div style="font-size:13px;font-weight:600;margin-bottom:.3rem">📸 Los momentos clave para la cámara</div>
+      <div style="font-size:12.5px;color:var(--muted);line-height:1.5">En el Renfe R3: al salir de Ripoll hacia los Pirineos el paisaje se vuelve épico — cámara lista. En el Tren Amarillo: el Puente Gisclard (km 22) y el Viaducto Séjourné son los puntos más fotogénicos. Sentarse del lado derecho subiendo, izquierdo bajando.</div>
+    </div>
+
+    <div style="background:var(--surface);border-left:3px solid #90CAF9;border-radius:0 10px 10px 0;padding:.85rem 1rem">
+      <div style="font-size:13px;font-weight:600;margin-bottom:.3rem">🧥 Ropa de montaña aunque haga calor en BCN</div>
+      <div style="font-size:12.5px;color:var(--muted);line-height:1.5">Font-Romeu está a 1.800m. En mayo puede hacer 10–15°C allá aunque en Barcelona sean 25°C. Llevar chaqueta, la necesitan. El niño de 10 años especialmente. En los vagones abiertos del Tren Amarillo refresca bastante.</div>
+    </div>
+
+    <div style="background:var(--surface);border-left:3px solid #CE93D8;border-radius:0 10px 10px 0;padding:.85rem 1rem">
+      <div style="font-size:13px;font-weight:600;margin-bottom:.3rem">💶 Euros en efectivo para el Tren Amarillo</div>
+      <div style="font-size:12.5px;color:var(--muted);line-height:1.5">Las taquillas pequeñas de las estaciones del Tren Amarillo no siempre aceptan tarjeta. Llevar al menos 100€ en efectivo para los 4 (billete + almuerzo en Francia). En Font-Romeu sí hay cajeros automáticos.</div>
+    </div>
+
+    <div style="background:var(--surface);border-left:3px solid #FF7043;border-radius:0 10px 10px 0;padding:.85rem 1rem">
+      <div style="font-size:13px;font-weight:600;margin-bottom:.3rem">👴 Para el viajero de 64 años</div>
+      <div style="font-size:12.5px;color:var(--muted);line-height:1.5">El tren hace todo el trabajo — nada de caminatas largas. En La Tour-de-Carol la estación del Tren Amarillo está a 50 metros del andén Renfe. Font-Romeu es perfecta para sentarse a tomar algo con vistas a los Pirineos sin necesidad de caminar.</div>
+    </div>
+
+    <div style="background:var(--surface);border-left:3px solid #A5D6A7;border-radius:0 10px 10px 0;padding:.85rem 1rem">
+      <div style="font-size:13px;font-weight:600;margin-bottom:.3rem">📡 Sin datos en Francia</div>
+      <div style="font-size:12.5px;color:var(--muted);line-height:1.5">Si tienen SIM española, el roaming en Francia suele estar incluido en planes europeos (verificar con el operador). En zona de montaña la señal puede ser baja. Descargar mapas offline de la zona pirenaica en Google Maps antes de salir.</div>
+    </div>
+
+  </div>
+
+  <!-- DATO HISTORICO -->
+  <div style="background:linear-gradient(135deg,#1A1A0D,#2A2A10);border:1px solid rgba(255,213,79,.2);border-radius:14px;padding:1rem;margin-bottom:1rem">
+    <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,213,79,.5);margin-bottom:.5rem">Dato histórico</div>
+    <div style="font-size:13px;color:rgba(255,255,255,.8);line-height:1.7">El Tren Amarillo lleva funcionando <strong style="color:#FFD54F">más de 115 años</strong> — inaugurado en 1910. Fue la primera línea ferroviaria eléctrica comercial en los Pirineos, alimentada por energía hidroeléctrica. Cruza 19 túneles y 40 puentes incluyendo el <strong style="color:#FFD54F">Viaducto Séjourné</strong>, obra maestra de granito de 65m de alto. Monumento histórico de Francia.</div>
+  </div>
+
+  <div style="background:rgba(165,214,167,.08);border:1px solid rgba(165,214,167,.25);border-radius:12px;padding:1rem;font-size:13px;color:rgba(165,214,167,.9);line-height:1.7">
+    <strong>🎯 Resumen ejecutivo:</strong> Renfe.com para los dos tramos del R3 (ida y vuelta). Tren Amarillo se compra en taquilla en La Tour-de-Carol — pedir descuento "Tribu Evasio" por ser 4 personas (−40%). Salir en el tren de las <strong>08:31 desde Sants</strong>. Chaqueta obligatoria. Cámara cargada. Este día va a ser el favorito del viaje.
+  </div>
+
+</div>
+
+<!-- ===== CONSEJOS ===== -->
+<div class="panel" id="panel-consejos">
+  <div id="tips-container"></div>
+</div>
+
+<!-- ===== EMERGENCIAS ===== -->
+<div class="panel" id="panel-emergencias">
+
+  <div style="font-size:13px;color:var(--muted);margin-bottom:1rem">Guarda estas pantallas offline. En España el código de área para llamadas internacionales es +34.</div>
+
+  <div class="emergency-card">
+    <div class="ec-title">🚨 Emergencias general (Policía / Bomberos / Ambulancia)</div>
+    <div class="ec-number" onclick="copyText('112')">112</div>
+    <div class="ec-note">Funciona desde cualquier teléfono, incluso sin señal ni tarjeta SIM · Toca para copiar</div>
+  </div>
+  <div class="emergency-card">
+    <div class="ec-title">🚑 Emergencias médicas</div>
+    <div class="ec-number" onclick="copyText('061')">061</div>
+    <div class="ec-note">Servicio de urgencias médicas de España</div>
+  </div>
+  <div class="emergency-card">
+    <div class="ec-title">👮 Policía Nacional</div>
+    <div class="ec-number" onclick="copyText('091')">091</div>
+    <div class="ec-note">Robo de pasaportes, carteristas, incidentes</div>
+  </div>
+  <div class="emergency-card">
+    <div class="ec-title">🏙 Policía Municipal Madrid / Barcelona</div>
+    <div class="ec-number" onclick="copyText('092')">092</div>
+    <div class="ec-note">Incidentes menores, orientación local</div>
+  </div>
+
+  <div class="divider"></div>
+  <div style="font-size:13px;font-weight:500;margin-bottom:.75rem">🏛 Embajada y consulado de Colombia</div>
+
+  <div class="embassy">
+    <div style="font-weight:600;font-size:14px;margin-bottom:.35rem">🇨🇴 Embajada de Colombia en Madrid</div>
+    <div style="font-size:13px;color:var(--muted);line-height:1.7">
+      📍 Calle Lagasca 88, Madrid<br>
+      📞 +34 91 435 53 26<br>
+      🕐 Lun–Vie 9:00–14:00h<br>
+      🌐 madrid.embajada.gov.co
+    </div>
+  </div>
+  <div class="embassy">
+    <div style="font-weight:600;font-size:14px;margin-bottom:.35rem">🇨🇴 Consulado de Colombia en Barcelona</div>
+    <div style="font-size:13px;color:var(--muted);line-height:1.7">
+      📍 Passeig de Gràcia 88, Barcelona<br>
+      📞 +34 93 272 37 16<br>
+      🕐 Lun–Vie 9:00–13:00h
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <div style="font-size:13px;font-weight:500;margin-bottom:.75rem">🏥 Hospitales principales</div>
+
+  <div class="embassy">
+    <div style="font-weight:600;font-size:14px;margin-bottom:.35rem">Madrid · Hospital La Paz</div>
+    <div style="font-size:13px;color:var(--muted)">📞 +34 91 727 70 00 · Urgencias 24h</div>
+  </div>
+  <div class="embassy">
+    <div style="font-weight:600;font-size:14px;margin-bottom:.35rem">Barcelona · Hospital del Mar</div>
+    <div style="font-size:13px;color:var(--muted)">📞 +34 93 248 30 00 · Urgencias 24h</div>
+  </div>
+
+  <div class="divider"></div>
+  <div style="font-size:13px;font-weight:500;margin-bottom:.75rem">💳 Tarjetas bloqueadas / perdidas</div>
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1rem;font-size:13px;color:var(--muted);line-height:1.8">
+    🏦 Visa Internacional: <strong style="color:var(--text)">+1 800 847 2911</strong><br>
+    🏦 Mastercard Internacional: <strong style="color:var(--text)">+1 636 722 7111</strong><br>
+    📱 Notifica a tu banco colombiano ANTES de viajar para evitar bloqueos por uso en el exterior.
+  </div>
+
+</div>
+
+</div><!-- content-wrap -->
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+  <button class="bn-btn active" onclick="switchPanel('itinerario',null,this)"><span class="bn-ico">📅</span>Plan</button>
+  <button class="bn-btn" onclick="switchPanel('presupuesto',null,this)"><span class="bn-ico">💶</span>Plata</button>
+  <button class="bn-btn" onclick="switchPanel('checklist',null,this)"><span class="bn-ico">✅</span>Lista</button>
+  <button class="bn-btn" onclick="switchPanel('frases',null,this)"><span class="bn-ico">💬</span>Frases</button>
+  <button class="bn-btn" onclick="switchPanel('emergencias',null,this)"><span class="bn-ico">🆘</span>SOS</button>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ===== DATA =====
+const madridDays = [
+  {n:1,date:'Jue 1 mayo',icon:'🏙',label:'Centro histórico',color:'#8B1A1A',acts:[
+    {t:'10:00',i:'☀️',n:'Puerta del Sol',tip:'El kilómetro 0 de España — foto obligatoria',cost:'free'},
+    {t:'11:00',i:'🏰',n:'Plaza Mayor',tip:'Arquitectura del s. XVII, perfecta para el café de la mañana',cost:'free'},
+    {t:'12:00',i:'🍖',n:'Mercado de San Miguel',tip:'Tapas gourmet. Lleva efectivo — ideal para probar el jamón ibérico'},
+    {t:'14:00',i:'🍽️',n:'Almuerzo · Menú del día',tip:'12–15€ primer + segundo + postre + bebida. El mejor precio/calidad de España'},
+    {t:'15:30',i:'⛪',n:'Catedral de la Almudena',tip:'Impresionante interior neogótico — entrada gratuita',cost:'free'},
+    {t:'17:00',i:'👑',n:'Palacio Real (exterior)',tip:'La fachada ya es espectacular, no hay que entrar',cost:'free'},
+    {t:'19:00',i:'🌿',n:'Jardines de Sabatini',tip:'Perfectos para descansar después del día',cost:'free'},
+  ]},
+  {n:2,date:'Vie 2 mayo',icon:'🌳',label:'Retiro y Prado',color:'#1A4A1A',acts:[
+    {t:'10:00',i:'🌳',n:'Parque del Retiro',tip:'Enorme parque — alquilar barca en el estanque con el niño',cost:'free'},
+    {t:'12:00',i:'🔮',n:'Palacio de Cristal del Retiro',tip:'Arquitectura de hierro y vidrio del siglo XIX',cost:'free'},
+    {t:'14:00',i:'🍽️',n:'Almuerzo'},
+    {t:'18:00',i:'🖼',n:'Museo del Prado',tip:'¡GRATIS de 18 a 20h! Velázquez, Goya, Rubens. Llegar 15 min antes — hace fila',cost:'free18'},
+    {t:'20:15',i:'🍺',n:'Cañas en La Latina',tip:'Barrio de tapas — la calle Cava Baja es legendaria'},
+  ]},
+  {n:3,date:'Sáb 3 mayo',icon:'🏛',label:'Excursión Segovia',color:'#2A1A5E',acts:[
+    {t:'08:00',i:'🚂',n:'Tren regional a Segovia',tip:'Cercanías Renfe, ~35 min. Comprar ida y vuelta en máquina',cost:'12-16€'},
+    {t:'09:30',i:'🏗',n:'Acueducto Romano',tip:'2.000 años, sin argamasa. La foto del viaje. Llega temprano',cost:'free'},
+    {t:'11:00',i:'🏰',n:'Alcázar de Segovia',tip:'El castillo que inspiró a Disney. Vista 360° impresionante',cost:'8-10€'},
+    {t:'14:00',i:'🐷',n:'Almuerzo · Cochinillo asado',tip:'El plato típico de Segovia. Mesón de Cándido es el clásico'},
+    {t:'17:00',i:'🚂',n:'Regreso a Madrid'},
+  ]},
+  {n:4,date:'Dom 4 mayo',icon:'⚽',label:'Bernabéu y Gran Vía',color:'#7A3A0A',acts:[
+    {t:'10:00',i:'🏟',n:'Tour Estadio Bernabéu',tip:'¡RESERVAR ONLINE CON ANTICIPACIÓN! El nuevo estadio renovado es increíble. El niño de 10 años no lo olvida',cost:'28-35€'},
+    {t:'13:00',i:'🍽️',n:'Almuerzo en Chamartín'},
+    {t:'15:00',i:'🛍',n:'Gran Vía',tip:'El boulevard más famoso de Madrid. Arquitectura ecléctica y tiendas',cost:'free'},
+    {t:'18:30',i:'🌅',n:'Templo de Debod',tip:'Templo egipcio real de 2.200 años. Vistas del atardecer sobre la sierra',cost:'free'},
+    {t:'20:30',i:'🍻',n:'Aperitivo en Malasaña',tip:'Barrio hipster con bares de calidad y ambiente relajado'},
+  ]},
+  {n:5,date:'Lun 5 mayo',icon:'✈️',label:'Vuelo a Barcelona',color:'#1A3A5C',acts:[
+    {t:'Mañana',i:'✈️',n:'Vuelo MAD → BCN',tip:'Llegar al aeropuerto T4 (Barajas) con 2h de anticipación. Vuelo ~1h 15min'},
+    {t:'',i:'🚇',n:'Aeropuerto El Prat → Ciudad',tip:'Metro L9 Sud hasta zona centro (~40 min, 5.15€). O taxi ~35€ fijo desde el aeropuerto'},
+    {t:'12:00',i:'🏨',n:'Check-in en Barcelona',tip:'Si el cuarto no está listo, dejar maletas en recepción — guardarropa'},
+    {t:'16:00',i:'🚶',n:'Paseo por El Born',tip:'Barrio medieval con cafés, tiendas artesanas y la Basílica de Santa María del Mar',cost:'free'},
+    {t:'19:00',i:'🌊',n:'Primera vista al Mediterráneo',tip:'Bajar al puerto o Barceloneta a ver el mar por primera vez',cost:'free'},
+  ]},
+];
+
+const barcelonaDays = [
+  {n:6,date:'Mar 6 mayo',icon:'🕌',label:'Gaudí esencial',color:'#8B1A1A',acts:[
+    {t:'09:30',i:'🕌',n:'Sagrada Família',tip:'¡RESERVAR SEMANAS ANTES! Las entradas se agotan. Tour con audioguía incluido',cost:'26-30€'},
+    {t:'13:00',i:'🍽️',n:'Almuerzo barrio Eixample'},
+    {t:'15:00',i:'🌀',n:'Casa Batlló (exterior)',tip:'La fachada es gratis y absolutamente extraordinaria',cost:'free'},
+    {t:'16:00',i:'🏠',n:'Casa Milà - La Pedrera (exterior)',tip:'Otro Gaudí impresionante. Cubierta de terrazas, visita interior opcional',cost:'free'},
+    {t:'18:00',i:'🚶',n:'Paseo de Gracia',tip:'El boulevard más elegante de Barcelona'},
+  ]},
+  {n:7,date:'Mié 7 mayo',icon:'🏛',label:'Gótico y Barceloneta',color:'#1A4A1A',acts:[
+    {t:'10:00',i:'🏘',n:'Barrio Gótico',tip:'Calles medievales laberínticas — el corazón de la Barcelona antigua. Perderse es el plan',cost:'free'},
+    {t:'12:00',i:'⛪',n:'Catedral de Barcelona',tip:'Impresionante claustro con gansos. Gratis por la mañana',cost:'free'},
+    {t:'14:00',i:'🍽️',n:'Almuerzo en el Gótico'},
+    {t:'16:00',i:'🏖',n:'Playa de Barceloneta',tip:'¡Primera vez en el Mediterráneo! Agua más fría de lo que parece',cost:'free'},
+    {t:'19:00',i:'🐟',n:'Cena de pescado en Barceloneta',tip:'Arròs negre o paella de marisco — los restaurantes del paseo'},
+  ]},
+  {n:8,date:'Jue 8 mayo',icon:'🌿',label:'Parque Güell y Búnkers',color:'#2A1A5E',acts:[
+    {t:'10:00',i:'🌈',n:'Parque Güell',tip:'Reservar online la zona monumental. El resto del parque es gratuito',cost:'10€'},
+    {t:'12:30',i:'🍽️',n:'Almuerzo zona Gràcia',tip:'Barrio bohemio con plazas llenas de locales — evitar cadenas'},
+    {t:'15:00',i:'🔭',n:'Búnkers del Carmel',tip:'LA mejor panorámica de Barcelona. Poco turística, totalmente gratis. Llevar agua',cost:'free'},
+    {t:'17:30',i:'🍦',n:'Helados en Gràcia',tip:'Merecido después de subir al Carmel'},
+  ]},
+  {n:9,date:'Vie 9 mayo',icon:'🚡',label:'Montjuïc completo',color:'#7A3A0A',acts:[
+    {t:'10:00',i:'🚡',n:'Teleférico de Montjuïc',tip:'Vistas del puerto y la ciudad. El abuelo lo agradece — nada de caminata',cost:'14-16€'},
+    {t:'11:00',i:'🏰',n:'Castillo de Montjuïc',tip:'Historia de Barcelona desde 1640. Terrazas con vista al mar',cost:'6-8€'},
+    {t:'14:00',i:'🍽️',n:'Almuerzo'},
+    {t:'16:00',i:'🎨',n:'MNAC - Arte románico catalán',tip:'La colección de arte románico mejor conservada del mundo',cost:'6-12€'},
+    {t:'21:00',i:'⛲',n:'Fuente Mágica de Montjuïc',tip:'Show de agua, luz y música. Gratis jue–dom. Ver horario en web de Barcelona',cost:'free'},
+  ]},
+  {n:10,date:'Sáb 10 mayo',icon:'🏖',label:'Playas tranquilas',color:'#1A4A1A',acts:[
+    {t:'10:00',i:'🏖',n:'Playa Nova Icaria',tip:'Más tranquila que Barceloneta, perfecta para el abuelo. Arena limpia',cost:'free'},
+    {t:'13:00',i:'🍽️',n:'Chiringuito en la playa',tip:'Comer con los pies en la arena — experiencia mediterránea real'},
+    {t:'16:00',i:'⛵',n:'Puerto Olímpico',tip:'Puerto de la Villa Olímpica 92. Paseo relajado con veleros y barcas',cost:'free'},
+    {t:'18:00',i:'🛍',n:'Centro comercial Diagonal',tip:'Por si hay que hacer alguna compra'},
+  ]},
+  {n:11,date:'Dom 11 mayo',icon:'⛰',label:'Excursión Montserrat',color:'#2A1A5E',acts:[
+    {t:'08:30',i:'🚂',n:'Tren Montserrat desde Plaça Espanya',tip:'Combina tren + cremallera (rack railway). Salida cada hora',cost:'25-30€ combo'},
+    {t:'10:00',i:'⛪',n:'Monasterio de Montserrat',tip:'Visitar la Virgen de Montserrat — La Moreneta. Filas para besarla'},
+    {t:'11:30',i:'🚠',n:'Funicular de Sant Joan',tip:'Sube 250m. Vista desde arriba impresionante',cost:'incl. combo'},
+    {t:'13:00',i:'🍽️',n:'Almuerzo en el monasterio',tip:'Comedor con vistas a la montaña'},
+    {t:'15:00',i:'🥾',n:'Caminatas cortas',tip:'Hay rutas de todos los niveles. Adaptar al ritmo del abuelo'},
+  ]},
+  {n:12,date:'Lun 12 mayo',icon:'🌊',label:'Costa Brava · Tossa',color:'#1A3A5C',acts:[
+    {t:'08:00',i:'🚌',n:'Bus a Tossa de Mar desde Barcelona',tip:'Salida temprana — el bus tarda ~1h 20min. Comprar en Sagalés online',cost:'15-20€ ida/vta'},
+    {t:'10:00',i:'🏖',n:'Playa de Tossa',tip:'Agua cristalina turquesa. Una de las más bonitas de España. Llegando temprano: sin hordas',cost:'free'},
+    {t:'14:00',i:'🏰',n:'Vila Vella de Tossa',tip:'Pueblo medieval amurallado en la colina sobre el mar. Único en el mundo'},
+    {t:'15:00',i:'🚶',n:'Caminos de Ronda',tip:'Sendero costero entre calas, acantilados y pinos. Vistas espectaculares',cost:'free'},
+    {t:'18:00',i:'🚌',n:'Regreso a Barcelona'},
+  ]},
+  {n:13,date:'Mar 13 mayo',icon:'🎨',label:'Arte y artesanía',color:'#7A3A0A',acts:[
+    {t:'10:00',i:'🖼',n:'Museo Picasso',tip:'La mejor colección cronológica de Picasso en el mundo. En El Born',cost:'12-16€'},
+    {t:'13:00',i:'🍽️',n:'Almuerzo en El Born'},
+    {t:'15:00',i:'🛍',n:'Tiendas artesanales de El Born',tip:'Cerámica, joyería local, ropa de diseñador. Mejor recuerdo que un imán'},
+    {t:'18:00',i:'🏘',n:'Explorar el Raval',tip:'Barrio multicultural con galerías y MACBA (Museo de Arte Contemporáneo)'},
+  ]},
+  {n:14,date:'Mié 14 mayo',icon:'🌟',label:'Día libre a elección',color:'#1A4A1A',acts:[
+    {t:'Todo',i:'🎯',n:'Día libre — elegir aventura',tip:''},
+    {t:'',i:'🛍',n:'La Roca Village (outlets)',tip:'Moda de marca con descuentos 30–70%. Bus directo desde El Corte Inglés. ~40 min'},
+    {t:'',i:'🏘',n:'Barrio de Eixample',tip:'Cuadrícula perfecta de Cerdà, llena de modernismo, bares y diseño'},
+    {t:'',i:'⚽',n:'Camp Nou Tour',tip:'El estadio más grande de Europa. Museo del Barça increíble',cost:'28-35€'},
+    {t:'',i:'🏖',n:'Día de playa relajado',tip:'Por si quedaron ganas de Mediterráneo — Nova Icaria o Bogatell'},
+    {t:'',i:'🏔',n:'Tibidabo',tip:'Parque de atracciones en lo alto de la montaña. Vistas panorámicas de toda la ciudad',cost:'25-35€'},
+  ]},
+  {n:15,date:'Jue 15 mayo',icon:'✈️',label:'Regreso a Colombia',color:'#888',acts:[
+    {t:'Madrugada',i:'🌙',n:'Preparar maletas',tip:'Dejar todo listo la noche anterior — menos estrés'},
+    {t:'',i:'✈️',n:'Vuelo de regreso',tip:'Llegar al aeropuerto 3 horas antes. El Prat (BCN) está lejos del centro — prever 40 min de taxi/metro'},
+    {t:'',i:'🇨🇴',n:'¡Bienvenidos de vuelta!',tip:'Con los mejores recuerdos y sin cochinillo en las maletas... o con 😄'},
+  ]},
+];
+
+function renderDays(days, containerId, colorBase) {
+  const c = document.getElementById(containerId);
+  days.forEach(day => {
+    const dc = document.createElement('div');
+    dc.className = 'day-card';
+    const actsHtml = day.acts.map(a => {
+      let tag = '';
+      if(a.cost === 'free') tag = '<span class="act-tag tag-free">✓ Gratis</span>';
+      else if(a.cost === 'free18') tag = '<span class="act-tag tag-free">✓ Gratis 18–20h</span>';
+      else if(a.cost === 'warn') tag = '<span class="act-tag tag-warn">⚠ Reservar antes</span>';
+      else if(a.cost) tag = `<span class="act-tag tag-cost">~${a.cost} pp</span>`;
+      return `<div class="activity">
+        <span class="act-time">${a.t}</span>
+        <span class="act-ico">${a.i}</span>
+        <div class="act-info">
+          <div class="act-name">${a.n}</div>
+          ${a.tip ? `<div class="act-tip">${a.tip}</div>` : ''}
+          ${tag}
+        </div>
+      </div>`;
+    }).join('');
+    dc.innerHTML = `
+      <div class="day-head" onclick="this.parentElement.classList.toggle('open')">
+        <div class="day-badge" style="background:${day.color}33;color:${day.color === '#888' ? '#aaa' : day.color.replace('1A','88').replace('8B','E5').replace('2A','66').replace('7A','CC')}">D${day.n}</div>
+        <div class="day-info">
+          <div class="day-name">${day.icon} ${day.label}</div>
+          <div class="day-date">${day.date}</div>
+        </div>
+        <div class="day-arrow">▼</div>
+      </div>
+      <div class="day-body">${actsHtml}</div>`;
+    c.appendChild(dc);
+  });
+}
+renderDays(madridDays,'days-madrid');
+renderDays(barcelonaDays,'days-barcelona');
+
+// ===== BUDGET =====
+const budgetItems = [
+  {i:'✈️',name:'Vuelos Madrid–Barcelona (ya reservados)',total:'Ya pagado ✓',pp:'incluido',pct:0},
+  {i:'🚇',name:'Metro y bus urbano (15 días)',total:'140–220€',pp:'35–55€/pp',pct:8},
+  {i:'🏛',name:'Museos y entradas',total:'560–840€',pp:'140–210€/pp',pct:35},
+  {i:'🍽️',name:'Comidas y cenas (15 días)',total:'1.200–1.800€',pp:'300–450€/pp',pct:42},
+  {i:'🚌',name:'Excursiones (Segovia, Montserrat, Tossa)',total:'220–280€',pp:'55–70€/pp',pct:10},
+  {i:'🛍',name:'Souvenirs y compras',total:'200–500€',pp:'50–125€/pp',pct:10},
+];
+const bi = document.getElementById('budget-items');
+budgetItems.forEach(b=>{
+  bi.innerHTML+=`<div class="budget-item">
+    <span class="bi-icon">${b.i}</span>
+    <div class="bi-info">
+      <div class="bi-name">${b.name}</div>
+      <div class="bi-bar-bg"><div class="bi-bar" style="width:${b.pct*2}%"></div></div>
+    </div>
+    <div class="bi-range">
+      <div class="bi-total">${b.total}</div>
+      <div class="bi-pp">${b.pp}</div>
+    </div>
+  </div>`;
+});
+
+const split = [
+  {p:'👦',age:'10 años',amount:'700–950€',note:'Entradas niño + tour Bernabéu'},
+  {p:'👩',age:'30 años',amount:'900–1.200€',note:'Presupuesto estándar'},
+  {p:'👨',age:'33 años',amount:'900–1.200€',note:'Presupuesto estándar'},
+  {p:'👴',age:'64 años',amount:'900–1.200€',note:'Ritmo tranquilo, menos caminatas largas'},
+];
+const bsplit = document.getElementById('budget-split');
+split.forEach(s=>{
+  bsplit.innerHTML+=`<div class="bs-card">
+    <div class="bs-person">${s.p}</div>
+    <div class="bs-age">${s.age}</div>
+    <div class="bs-amount">${s.amount}</div>
+    <div class="bs-note">${s.note}</div>
+  </div>`;
+});
+
+const savingTips = [
+  {t:'Menú del día',b:'12–15€ por almuerzo completo (primer plato + segundo + postre + bebida). La mejor relación calidad/precio en España. Solo al mediodía.'},
+  {t:'Museo del Prado gratis',b:'Entrada gratuita de 18:00 a 20:00h. Llega 15 minutos antes — hay fila. Ahorra 15€ por persona.'},
+  {t:'T-Casual (10 viajes metro)',b:'En Madrid y Barcelona hay bonos de 10 viajes por ~12€. Mucho más barato que billete individual.'},
+  {t:'Exteriores de Gaudí',b:'Las fachadas de Casa Batlló y La Pedrera son gratis. El interior cuesta 35–45€. Vale la pena solo la Sagrada Família por dentro.'},
+  {t:'Supermercado para desayunos',b:'Mercadona, Lidl, Carrefour tienen desayunos a 2–3€. Ahorra 10€/persona/día vs. cafetería turística.'},
+  {t:'Búnkers del Carmel',b:'La mejor vista de Barcelona, mejor que el Tibidabo, y completamente gratis. Lleva agua.'},
+];
+const stips = document.getElementById('saving-tips');
+savingTips.forEach(s=>{
+  stips.innerHTML+=`<div class="tip-card green" style="margin-bottom:.5rem">
+    <div class="tip-head"><span class="tip-ico">💡</span><span class="tip-title">${s.t}</span></div>
+    <div class="tip-body">${s.b}</div>
+  </div>`;
+});
+
+// ===== CHECKLIST =====
+const checkData = {
+  '📋 Documentos imprescindibles':[
+    {l:'Pasaportes vigentes (todos)',note:'Mín. 6 meses de vigencia',i:'📔'},
+    {l:'Tiquetes de avión impresos',note:'Ida y vuelta',i:'✈️'},
+    {l:'Seguro de viaje activo',note:'Mínimo obligatorio Schengen',i:'🛡'},
+    {l:'Reservas de hotel/Airbnb',note:'Impresas o en el cel',i:'🏨'},
+    {l:'Este itinerario guardado offline',note:'',i:'📱'},
+  ],
+  '💳 Dinero y tarjetas':[
+    {l:'Informar al banco del viaje al exterior',note:'Evita bloqueos',i:'🏦'},
+    {l:'Tarjeta de crédito/débito internacional',note:'Visa o Mastercard',i:'💳'},
+    {l:'Efectivo en euros: 300–500€',note:'Para mercados y emergencias',i:'💶'},
+    {l:'Extractos bancarios recientes',note:'Para migración española',i:'📄'},
+    {l:'Fondos visibles: 7.266 EUR',note:'Requisito frontera Schengen',i:'⚠️'},
+  ],
+  '🎫 Reservas por hacer':[
+    {l:'Sagrada Família — entrada online',note:'¡Se agota semanas antes!',i:'🕌'},
+    {l:'Tour Bernabéu — entrada online',note:'Para el niño de 10 años',i:'🏟'},
+    {l:'AVE Madrid → Barcelona',note:'Renfe.com — más barato anticipado',i:'🚄'},
+    {l:'Parque Güell — zona monumental',note:'Cupo limitado',i:'🌈'},
+    {l:'Seguro de viaje contratado',note:'Asistensi o IATI son opciones buenas',i:'🛡'},
+  ],
+  '📱 Apps descargadas':[
+    {l:'Google Maps + mapas offline de Madrid y BCN',note:'Sin gastar datos',i:'🗺'},
+    {l:'Moovit o Citymapper',note:'Transporte urbano',i:'🚇'},
+    {l:'Renfe app o web',note:'Para el tren',i:'🚄'},
+    {l:'Translate (modo cámara para menús)',note:'',i:'🔤'},
+    {l:'XE Currency (convertidor EUR/COP)',note:'',i:'💱'},
+    {l:'Whatsapp con datos internacionales',note:'Activar roaming o SIM española',i:'📞'},
+  ],
+  '🌐 Conectividad':[
+    {l:'Plan de datos internacionales activado',note:'O comprar SIM española en el aeropuerto',i:'📶'},
+    {l:'Confirmar cobertura del operador en España',note:'Claro/Movistar Colombia tienen roaming',i:'📡'},
+    {l:'Power bank cargado',note:'Días largos de turismo',i:'🔋'},
+    {l:'Adaptador enchufe tipo C/F',note:'España usa 220V tipo europeo',i:'🔌'},
+  ],
+};
+const cc = document.getElementById('checks-container');
+let totalChecks = 0, doneChecks = 0;
+Object.entries(checkData).forEach(([group, items])=>{
+  let html = `<div class="check-group"><div class="check-group-title">${group}</div>`;
+  items.forEach((item,idx)=>{
+    totalChecks++;
+    html+=`<div class="check-item" onclick="toggleCheck(this,'main')" data-id="chk-${group}-${idx}">
+      <div class="check-box">✓</div>
+      <span class="check-icon">${item.i}</span>
+      <span class="check-label">${item.l}</span>
+      ${item.note?`<span class="check-note">${item.note}</span>`:''}
+    </div>`;
+  });
+  html+='</div>';
+  cc.innerHTML+=html;
+});
+
+function toggleCheck(el, type) {
+  el.classList.toggle('done');
+  updateProgress();
+  // save to localStorage
+  const id = el.dataset.id;
+  if(id) {
+    let saved = JSON.parse(localStorage.getItem('checks')||'{}');
+    saved[id] = el.classList.contains('done');
+    localStorage.setItem('checks', JSON.stringify(saved));
+  }
+}
+function updateProgress(){
+  const all = document.querySelectorAll('#checks-container .check-item').length;
+  const done = document.querySelectorAll('#checks-container .check-item.done').length;
+  const pct = all ? Math.round(done/all*100) : 0;
+  document.getElementById('check-stat-text').textContent = `${done} de ${all} completados`;
+  document.getElementById('check-stat-pct').textContent = pct + '%';
+  document.getElementById('cpb').style.width = pct + '%';
+}
+
+// Load saved checks
+function loadSavedChecks(){
+  const saved = JSON.parse(localStorage.getItem('checks')||'{}');
+  Object.entries(saved).forEach(([id,done])=>{
+    const el = document.querySelector(`[data-id="${id}"]`);
+    if(el && done) el.classList.add('done');
+  });
+  updateProgress();
+}
+loadSavedChecks();
+
+// ===== PACKING =====
+const packingData = {
+  '👗 Ropa':[
+    {i:'👕',l:'Camisetas (5–7)'},
+    {i:'👖',l:'Pantalones cómodos (3)'},
+    {i:'🩱',l:'Ropa de baño (2)'},
+    {i:'🧥',l:'Chaqueta ligera'},
+    {i:'🧣',l:'Pañoleta/bufanda'},
+    {i:'🩳',l:'Shorts para playa'},
+    {i:'👗',l:'Ropa para salir a cenar'},
+    {i:'🧦',l:'Calcetines (7+)'},
+  ],
+  '👟 Calzado':[
+    {i:'👟',l:'Tenis cómodos para caminar'},
+    {i:'👡',l:'Sandalias de playa'},
+    {i:'👠',l:'Zapatos para noche'},
+  ],
+  '💊 Salud y bienestar':[
+    {i:'💊',l:'Medicamentos habituales'},
+    {i:'🩹',l:'Botiquín básico'},
+    {i:'🧴',l:'Protector solar FPS 50+'},
+    {i:'💊',l:'Ibuprofeno / Acetaminofén'},
+    {i:'🤧',l:'Antihistamínico'},
+    {i:'🦶',l:'Curitas (muchas — por los tenis nuevos)'},
+  ],
+  '🎒 Accesorios':[
+    {i:'🔌',l:'Adaptador enchufe europeo'},
+    {i:'🔋',l:'Power bank'},
+    {i:'📷',l:'Cámara / cargador'},
+    {i:'👓',l:'Gafas de sol'},
+    {i:'🎒',l:'Mochila pequeña para el día'},
+    {i:'👜',l:'Riñonera (anti-carteristas)'},
+    {i:'☂️',l:'Paraguas plegable pequeño'},
+  ],
+  '👶 Para el niño (10 años)':[
+    {i:'🎮',l:'Tablet/juego para el avión'},
+    {i:'🎧',l:'Audífonos'},
+    {i:'🧴',l:'Protector solar extra'},
+    {i:'🩳',l:'Ropa de baño extra'},
+    {i:'😴',l:'Almohada de viaje'},
+  ],
+};
+const pc = document.getElementById('packing-container');
+Object.entries(packingData).forEach(([cat, items])=>{
+  let html = `<div class="pack-cat"><div class="pack-title">${cat}</div><div class="pack-grid">`;
+  items.forEach((item, idx)=>{
+    html+=`<div class="pack-item" onclick="togglePack(this,'${cat}-${idx}')">
+      <span class="pack-ico">${item.i}</span>
+      <span class="pack-label">${item.l}</span>
+      <div class="pack-cb">✓</div>
+    </div>`;
+  });
+  html+='</div></div>';
+  pc.innerHTML+=html;
+});
+function togglePack(el, id){
+  el.classList.toggle('done');
+  let saved = JSON.parse(localStorage.getItem('packing')||'{}');
+  saved[id] = el.classList.contains('done');
+  localStorage.setItem('packing', JSON.stringify(saved));
+}
+// load packing
+const packSaved = JSON.parse(localStorage.getItem('packing')||'{}');
+document.querySelectorAll('.pack-item').forEach(el=>{
+  const onclick = el.getAttribute('onclick');
+  const id = onclick.match(/'([^']+)'/)[1];
+  if(packSaved[id]) el.classList.add('done');
+});
+
+// ===== FRASES =====
+const phrasesData = {
+  '👋 Básico':[
+    {es:'¿Me puede ayudar, por favor?',pron:'¿Me PWEde ayuDAR, por faVOR?',ctx:'Pedir ayuda'},
+    {es:'No entiendo, ¿puede repetirlo más despacio?',pron:'No enTIENdo, ¿PWEde rePETIRlo más desPAsio?',ctx:'Si hablan muy rápido'},
+    {es:'Soy colombiano/a',pron:'Soy coLOMbiano',ctx:'Al presentarse'},
+    {es:'¿Habla inglés?',pron:'¿Abla inGLÉS?',ctx:''},
+  ],
+  '🍽️ Restaurantes':[
+    {es:'Una mesa para cuatro, por favor',pron:'Una MEsa para KWAtro, por faVOR',ctx:'Al llegar'},
+    {es:'¿Qué viene en el menú del día?',pron:'¿Ké VIEne en el meNÚ del DÍa?',ctx:'El almuerzo económico'},
+    {es:'La cuenta, por favor',pron:'La KWENta, por faVOR',ctx:'Pedir la cuenta'},
+    {es:'¿Está incluido el IVA?',pron:'¿esTÁ incluÍdo el iBA?',ctx:'Para saber el precio real'},
+    {es:'Sin gluten / soy alérgico a...',pron:'Sin gLUten / soi aLÉRhico a...',ctx:'Alergias'},
+    {es:'¡Esto está muy rico!',pron:'¡Esto estÁ MUI RIko!',ctx:'Elogiar la comida'},
+  ],
+  '🚇 Transporte':[
+    {es:'¿Cómo llego a...?',pron:'¿KOmo YEgo a...?',ctx:'Pedir direcciones'},
+    {es:'¿Dónde está la parada de metro?',pron:'¿DONde estÁ la paRAda de MEtro?',ctx:''},
+    {es:'Un billete sencillo, por favor',pron:'Un biYEte senSIyo',ctx:'Metro / autobús'},
+    {es:'¿A qué hora sale el tren?',pron:'¿a ké ORA SAle el TREN?',ctx:'Trenes'},
+  ],
+  '🛍️ Compras':[
+    {es:'¿Cuánto cuesta esto?',pron:'¿KWAnto KWEsta ESto?',ctx:''},
+    {es:'¿Tiene algo más barato?',pron:'¿TIEne ALgo más baRAto?',ctx:'Regatear un poco'},
+    {es:'Me lo llevo',pron:'me lo YEvo',ctx:'Para comprar algo'},
+    {es:'¿Tiene talla más grande / pequeña?',pron:'¿TIEne TAya más GRANde?',ctx:'Ropa'},
+  ],
+  '🆘 Emergencias':[
+    {es:'Llame a la policía / ambulancia',pron:'YAme a la poliSÍa / ambuLANsia',ctx:'Emergencia'},
+    {es:'Me han robado el pasaporte',pron:'me an roBAdo el pasaPORte',ctx:'Robo'},
+    {es:'¿Dónde está el hospital más cercano?',pron:'¿DONde estÁ el ospiTAL más serKAno?',ctx:''},
+    {es:'Necesito un médico',pron:'neSEsito un MEdico',ctx:'Urgencia médica'},
+  ],
+};
+const phc = document.getElementById('phrases-container');
+Object.entries(phrasesData).forEach(([section, phrases])=>{
+  phc.innerHTML+=`<div class="phrase-section">${section}</div>`;
+  phrases.forEach(p=>{
+    phc.innerHTML+=`<div class="phrase-card" onclick="copyPhrase('${p.es.replace(/'/g,"\\'")}')">
+      <div style="flex:1">
+        <div class="phrase-es">${p.es}</div>
+        <div class="phrase-pron">🔊 ${p.pron}</div>
+      </div>
+      ${p.ctx?`<span class="phrase-context">${p.ctx}</span>`:''}
+      <span class="phrase-copy">📋</span>
+    </div>`;
+  });
+});
+
+function copyPhrase(text){
+  navigator.clipboard.writeText(text).then(()=>showToast('¡Frase copiada! 📋')).catch(()=>showToast(text));
+}
+function copyText(text){
+  navigator.clipboard.writeText(text).then(()=>showToast(`${text} copiado ✓`));
+}
+
+// ===== TIPS =====
+const tipsData = [
+  {type:'gold',ico:'⏰',title:'Los horarios españoles son distintos',body:'Los españoles cenan a las 21–22h. Los restaurantes abren a cenar a las 21h. Plan: desayuno 9–10h, almuerzo (menú del día) 14–16h, merienda 17–18h, cena 21h. La siesta es real — muchos negocios cierran de 14 a 17h.'},
+  {type:'red',ico:'🛡',title:'Seguridad: carteristas en Barcelona',body:'Las Ramblas, el metro y las zonas turísticas de Barcelona tienen carteristas profesionales. Usa riñonera BAJO la ropa o mochila con cierre hacia adelante. Nunca saques el teléfono caminando distráido. Madrid es más segura pero tampoco te confíes.'},
+  {type:'blue',ico:'🚇',title:'Transporte: compra bonos, no viajes sueltos',body:'En Madrid: Abono Transportes o bono de 10 viajes (12,20€) vs. 1,50–2€ el suelto. En Barcelona: T-Casual 10 viajes (12,20€). El aeropuerto El Prat tiene suplemento de 4,60€ extra al metro. Citymapper es la mejor app para moverte.'},
+  {type:'green',ico:'👴',title:'Para el viajero de 64 años',body:'Montserrat incluye mucha caminata — el funicular de Sant Joan alivia el ascenso. El Teleférico de Montjuïc es perfecto: vistas espectaculares sin esfuerzo. Las playas Nova Icaria y Bogatell son más tranquilas que Barceloneta. Reserva siempre donde haya opción de sentarse.'},
+  {type:'gold',ico:'👦',title:'Para el niño de 10 años',body:'El Tour del Bernabéu será el recuerdo más emocionante del viaje. El Parque Güell tiene mucho colorido y espacio para correr. La playa de Tossa de Mar tiene agua cristalina ideal para snorkel. Montserrat tiene senderos con puentes y vistas tipo aventura.'},
+  {type:'blue',ico:'🏟',title:'Reservas que NO puedes dejar para último momento',body:'Sagrada Família: reservar con 2–3 semanas de anticipación mínimo. Tour Bernabéu: reservar online en bernabeuvirtualtour.com. Parque Güell zona monumental: cupo muy limitado. Camp Nou: si hay partido el 14 de mayo, comprar entradas en fcbarcelona.com.'},
+  {type:'red',ico:'🌡',title:'Clima en mayo',body:'Madrid: 16–24°C de día, 9–14°C de noche. Llevar chaqueta. Barcelona: 19–26°C de día, 14–18°C de noche. Más cálida. En ambas ciudades llueve ocasionalmente en mayo — llevar paraguas plegable. Protector solar desde el primer día.'},
+  {type:'gold',ico:'🍷',title:'Comida y bebida',body:'El menú del día (12–15€) es sagrado: primer plato + segundo + postre + pan + bebida. El jamón ibérico, la tortilla española y las croquetas son básicos. En Barcelona no pidas paella — es valenciana. Pide arròs negre o fideuà. El agua del grifo en España es potable y gratis.'},
+  {type:'blue',ico:'📶',title:'Datos móviles y conectividad',body:'Opción 1: Roaming con tu operador colombiano (verifica costos — pueden ser altos). Opción 2: SIM española en el aeropuerto (Orange, Vodafone) por 10–20€ con 10–20GB. Opción 3: eSIM de Airalo o Holafly. Los aeropuertos y la mayoría de cafés tienen WiFi gratis.'},
+  {type:'green',ico:'💊',title:'Salud en España',body:'Los colombianos con seguro de viaje tienen atención médica. Sin seguro, una consulta urgencias cuesta 100–200€. La farmacia en España es la mejor primera opción para síntomas menores — los farmacéuticos son muy profesionales y pueden recetar sin médico. Busca la cruz verde.'},
+];
+const tc = document.getElementById('tips-container');
+tipsData.forEach(t=>{
+  tc.innerHTML+=`<div class="tip-card ${t.type}" style="margin-bottom:.6rem">
+    <div class="tip-head"><span class="tip-ico">${t.ico}</span><span class="tip-title">${t.title}</span></div>
+    <div class="tip-body">${t.body}</div>
+  </div>`;
+});
+
+// ===== PANEL SWITCHING =====
+function switchPanel(name, topBtn, bottomBtn){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('panel-'+name).classList.add('active');
+  if(topBtn){
+    document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+    topBtn.classList.add('active');
+  }
+  if(bottomBtn){
+    document.querySelectorAll('.bn-btn').forEach(b=>b.classList.remove('active'));
+    bottomBtn.classList.add('active');
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ===== COUNTDOWN =====
+function updateCountdown(){
+  const target = new Date('2025-05-01T09:00:00');
+  const now = new Date();
+  const diff = target - now;
+  if(diff <= 0){
+    document.querySelector('.countdown-bar').innerHTML = '<span style="font-size:13px">🎉 ¡El viaje ha comenzado! ¡Disfruten España!</span>';
+    return;
+  }
+  const d = Math.floor(diff/86400000);
+  const h = Math.floor((diff%86400000)/3600000);
+  const m = Math.floor((diff%3600000)/60000);
+  document.getElementById('cd-d').textContent = d;
+  document.getElementById('cd-h').textContent = h;
+  document.getElementById('cd-m').textContent = m;
+}
+updateCountdown();
+setInterval(updateCountdown, 30000);
+
+// ===== TOAST =====
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 2000);
+}
+</script>
+</body>
+</html>
